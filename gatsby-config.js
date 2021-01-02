@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'resume-test',
+        repositoryName: 'curtains',
         accessToken: process.env.API_KEY,
       },
     },

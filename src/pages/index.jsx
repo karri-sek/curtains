@@ -1,8 +1,8 @@
-import { css } from '@emotion/core'
-import { graphql } from 'gatsby'
-import { Parser } from 'html-to-react'
-import React from 'react'
-import Layout from '../components/Layout'
+import { css } from "@emotion/core";
+import { graphql } from "gatsby";
+import { Parser } from "html-to-react";
+import React from "react";
+import Layout from "../components/Layout";
 
 const container = css`
   margin: 0 auto;
@@ -78,88 +78,29 @@ const container = css`
     background-color: #f1f5f7;
     white-space: nowrap;
   }
-`
+`;
 
-const htmlToReactParser = new Parser()
+const htmlToReactParser = new Parser();
 
-export default props => {
-  const { data } = props
-  const content = data.prismicHomepage.data
-  const name = content.name.text
-  const description = content.description.html
-
-  const sections = content.body.map(section => {
-    const title = section.primary.title.text
-    const items = section.items.map(item => htmlToReactParser.parse(item.content.html))
-
-    if (section.slice_type === 'section') {
-      return (
-        <div className="section">
-          <h2>{title}</h2>
-          <div>{items}</div>
-        </div>
-      )
-    }
-    if (section.slice_type === 'skills') {
-      return (
-        <div className="skills">
-          <h2>{title}</h2>
-          <div>{items}</div>
-        </div>
-      )
-    }
-  })
+export default (props) => {
+  const { data } = props;
+  console.log(data);
 
   return (
-    <Layout>
-      <div css={container}>
-        <h1>{name}</h1>
-        {htmlToReactParser.parse(description)}
-        {sections}
-      </div>
-    </Layout>
-  )
-}
+    <div className="container">
+
+<h1>{data.prismicBlogpost.data.name.text}</h1>
+    </div>)
+};
 
 export const pageQuery = graphql`
   query {
-    prismicHomepage {
+    prismicBlogpost {
       data {
         name {
           text
         }
-        description {
-          html
-        }
-        body {
-          ... on PrismicHomepageBodySection {
-            slice_type
-            primary {
-              title {
-                text
-              }
-            }
-            items {
-              content {
-                html
-              }
-            }
-          }
-          ... on PrismicHomepageBodySkills {
-            slice_type
-            primary {
-              title {
-                text
-              }
-            }
-            items {
-              content {
-                html
-              }
-            }
-          }
-        }
       }
     }
   }
-`
+`;
