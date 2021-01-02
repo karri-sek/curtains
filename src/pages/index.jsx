@@ -3,103 +3,87 @@ import { graphql } from "gatsby";
 import { Parser } from "html-to-react";
 import React from "react";
 import Layout from "../components/Layout";
+import styled from "styled-components";
 
 const container = css`
-  margin: 0 auto;
-  padding: 4rem 2rem 8rem 2rem;
-  max-width: 600px;
-  color: #333333;
-
-  h1 {
-    font-size: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
+  .wrap-img {
+    position: relative;
+    height: 100vh;
+    width: 100vh;
+    background-image: url("../files/image023.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-
-  h2 {
-    margin-top: 4rem;
-    font-size: 12px;
-    font-weight: 600;
-    color: #c9cccf;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-  }
-
-  p {
-    margin-bottom: 0.25rem;
-  }
-
-  a {
-    transition: box-shadow 160ms ease 0s;
-    box-shadow: rgb(238, 251, 255) 0px -9px 0px inset;
-    border-bottom: 2px solid rgb(207, 243, 255);
-    text-decoration: none;
-    color: #323336;
-    &:hover {
-      box-shadow: rgb(207, 243, 255) 0px -1.2em 0px inset;
-    }
-  }
-
-  .section ul {
-    margin-top: 0.5rem;
-    margin-left: 2.5rem;
-    list-style: disc;
-  }
-
-  .section li {
-    margin-bottom: 0.5rem;
-  }
-
-  .grey {
-    color: #96999b;
-  }
-
-  .headline {
-    display: block;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 1.2px;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .skills li {
-    margin-bottom: 1rem;
-    margin-right: 0.5rem;
-    padding: 0.25rem 1rem;
-    background-color: #f1f5f7;
-    white-space: nowrap;
+  .wrap-img h2 {
+    color: blue;
   }
 `;
 
+const Wrapper = styled.section`
+  position: relative;
+  background-size: cover;
+  height: 100vh;
+  background-image: url(${props=>props.url});
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+`;
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+const ToplineImg = styled.img`
+  top:10%;
+  right: 33%;
+  left: 32%;
+  width:33%;
+  height: 0.3%;
+  position: absolute;
+  src: (${props=>props.url});
+`;
 const htmlToReactParser = new Parser();
 
 export default (props) => {
   const { data } = props;
-  console.log(data);
+  console.log(">>",data);
+  const { url } = data.prismicBlogpost.data.topline;
+  const backgroundURL = data.prismicBlogpost.data.background_image.url;
+  console.log(backgroundURL);
 
   return (
-    <div className="container">
-
-<h1>{data.prismicBlogpost.data.name.text}</h1>
-    </div>)
+    <Layout>
+    <Wrapper url={backgroundURL}>
+      <ToplineImg url={url}></ToplineImg>
+    </Wrapper>
+    </Layout>
+  );
 };
 
 export const pageQuery = graphql`
   query {
     prismicBlogpost {
       data {
+        brochure_logo {
+          alt
+          copyright
+          url
+        }
         name {
+          html
           text
         }
+        topline {
+          alt
+          copyright
+          url
+        }
+        background_image {
+        alt
+        copyright
+        url
+      }
       }
     }
   }

@@ -4,7 +4,10 @@ import Helmet from 'react-helmet'
 
 const globalStyle = css`
   html,
-  body,
+  body{
+    padding: 0;
+    margin: 0;
+  },
   div,
   span,
   applet,
@@ -135,7 +138,7 @@ const globalStyle = css`
     -moz-osx-font-smoothing: grayscale;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, Cantarell, Roboto, Helvetica, Arial, Noto Sans,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  }
+  },
 `
 
 const Layout = ({ children }) => (
