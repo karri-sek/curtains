@@ -149,6 +149,8 @@ export default (props) => {
   const videoURL = items.video_logo.url;
   const prismicLogoURL = items.prismic_logo.url;
   const linkedInLink = items.linkedinurl.url;
+  const instagramLink = items.instalink.url;
+  const facebookLink = items.facebookurl.url;
   const headerRightTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
@@ -163,8 +165,8 @@ export default (props) => {
         <TopLineL src={url} />
         <LinkedInInput src={linkedInURL} type="image" onClick={()=>{window.location=linkedInLink}}></LinkedInInput>
         <LinkedInRight src={linkedInURL} type="image"  id="lr"  onClick={()=>{window.location=linkedInLink}}/>
-        <FaceBookInput type="image" value="" onclick="" src={fbIconURL} />
-        <InstagramInput src={instaIconURL} type="image" value="" onclick="" />
+        <FaceBookInput type="image" value="" onclick="" src={fbIconURL} onClick={()=>{window.location=facebookLink}} />
+        <InstagramInput src={instaIconURL} type="image" value="" onClick={()=>{window.location=instagramLink}}/>
         <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
         <Email src={emailIconURL} type="image" value="" onclick="" />
 
@@ -260,6 +262,12 @@ export const pageQuery = graphql`
           url
         }
         linkedinurl {
+          url
+        }
+        instalink {
+          url
+        }
+        facebookurl {
           url
         }
       }
