@@ -199,7 +199,7 @@ export default (props) => {
         <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
         <Email src={emailIconURL} type="image" value="" onclick="" />
 
-        <CurtainLogo src={logo_url} type="image" value="" onclick="" />
+        <CurtainLogo src={logo_url} type="image"/>
 
         <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
