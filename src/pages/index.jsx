@@ -246,9 +246,9 @@ export default (props) => {
         <Paragraph rvalue="29%">{headerLeftTitle}</Paragraph>
         <input
           style={{
-            right: "16%",
+            right: "15%",
             position: "absolute",
-            top: "24%",
+            top: "80%",
             width: "26%",
           }}
           src={threeModelLogo}
@@ -280,6 +280,19 @@ export default (props) => {
           value=""
           onclick=""
         ></input>
+        <input
+          style={{
+            right: "16%",
+            position: "absolute",
+            top: "24%",
+            width: "26%",
+          }}
+          src={degreeIconURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+
       </Wrapper>
     </Layout>
   );
