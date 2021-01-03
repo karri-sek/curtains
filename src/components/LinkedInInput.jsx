@@ -7,6 +7,7 @@ const LinkedInInput = styled.input`
   top: 7%;
   height: 6%;
   font-size: 2.4vw;
+  color: red;
   @media (orientation: portrait) {
     top: 10%;
     left: 19%;

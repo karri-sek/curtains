@@ -153,6 +153,10 @@ export default (props) => {
   const watchVideoLink = items.watchvideolink.url;
   const _3dmodelURL = items._3dmodellink.url;
   const pdfDocLink = items.pdflink.url;
+  const whastsappchatlink = items.whastsappchatlink.url;
+  const mailtolink = items.mailtolink.url;
+console.log(" whastsappchatlink ",whastsappchatlink);
+
   const headerRightTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
@@ -196,10 +200,14 @@ export default (props) => {
             window.location = instagramLink;
           }}
         />
-        <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
-        <Email src={emailIconURL} type="image" value="" onclick="" />
+        <Whatsapp src={whatsappIconURL} type="image" value="" onClick={() => {
+            window.location = whastsappchatlink;
+          }}/>
+        <Email src={emailIconURL} type="image" value="" onClick={() => {
+            window.location = mailtolink;
+          }} />
 
-        <CurtainLogo src={logo_url} type="image"/>
+        <CurtainLogo src={logo_url} type="image" />
 
         <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
@@ -326,6 +334,12 @@ export const pageQuery = graphql`
           url
         }
         pdflink {
+          url
+        }
+        mailtolink {
+          url
+        }
+        whastsappchatlink {
           url
         }
       }
