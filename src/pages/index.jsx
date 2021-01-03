@@ -4,21 +4,7 @@ import { Parser } from "html-to-react";
 import React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-
-const container = css`
-  .wrap-img {
-    position: relative;
-    height: 100vh;
-    width: 100vh;
-    background-image: url("../files/image023.png");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .wrap-img h2 {
-    color: blue;
-  }
-`;
+import "../portret.css";
 
 const Wrapper = styled.section`
   position: relative;
@@ -102,11 +88,11 @@ const LogoDescription = styled.section`
 `;
 
 const Paragraph = styled.p`
-  top:5.1%;
-  left:${props=>props.lvalue};
-  right:${props=>props.rvalue};
+  top: 5.1%;
+  left: ${(props) => props.lvalue};
+  right: ${(props) => props.rvalue};
   position: absolute;
-  height:4%;
+  height: 4%;
   color: white;
   font-size: 1.7em;
   font-weight: bold;
@@ -127,8 +113,14 @@ export default (props) => {
   console.log("items ", items.email.url);
   const emailIconURL = items.email.url;
   const whatsappIconURL = items.whatsapp.url;
-  const headerRightTitle = data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
-  const headerLeftTitle = data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
+  const fbIconURL = items.facebook_logo.url;
+  const instaIconURL = items.instagram_logo.url;
+  const degreeIconURL = items._360_logo.url;
+  const headerRightTitle =
+    data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
+  const headerLeftTitle =
+    data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
+
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
@@ -144,6 +136,32 @@ export default (props) => {
             "font-size": "2.4vw",
           }}
           src={linkedInURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            left: "24%",
+            position: "absolute",
+            top: "7%",
+            height: "6%",
+            "font-size": "2.4vw",
+          }}
+          src={fbIconURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            left: "28%",
+            position: "absolute",
+            top: "7%",
+            height: "6%",
+            "font-size": "2.4vw",
+          }}
+          src={instaIconURL}
           type="image"
           value=""
           onclick=""
@@ -256,6 +274,15 @@ export const pageQuery = graphql`
           url
         }
         whatsapp {
+          url
+        }
+        facebook_logo {
+          url
+        }
+        instagram_logo {
+          url
+        }
+        _360_logo {
           url
         }
       }
