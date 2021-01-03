@@ -13,6 +13,13 @@ const Wrapper = styled.section`
   background-image: url(${(props) => props.url});
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  @media (orientation: portrait) {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-image: url(${(props) => props.url});
+    background-position: 50% 50%;
+  }
 `;
 const Title = styled.h1`
   font-size: 1.5em;
@@ -26,6 +33,14 @@ const ToplineImg = styled.img`
   width: 33%;
   height: 0.3%;
   position: absolute;
+  @media (orientation: portrait) {
+    top: 6%;
+    left: 32%;
+    right: 28%;
+    width: 31%;
+    height: 0.2%;
+    position: absolute;
+  }
 `;
 
 const TopLineR = styled.img`
@@ -34,6 +49,13 @@ const TopLineR = styled.img`
   width: 7%;
   height: 0.3%;
   position: absolute;
+  @media (orientation: portrait) {
+    top: 10%;
+    left: 5%;
+    width: 7%;
+    height: 0.3%;
+    position: absolute;
+  }
 `;
 
 const TopLineL = styled.img`
@@ -116,6 +138,9 @@ export default (props) => {
   const fbIconURL = items.facebook_logo.url;
   const instaIconURL = items.instagram_logo.url;
   const degreeIconURL = items._360_logo.url;
+  const threeModelLogo = items._3d_model_logo.url;
+  const pdfLogoURL = items.pdf_logo.url;
+  const videoURL = items.video_logo.url;
   const headerRightTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
@@ -219,6 +244,42 @@ export default (props) => {
         <LogoDescription>{logoDescription} </LogoDescription>
         <Paragraph lvalue="12.5%">{headerRightTitle}</Paragraph>
         <Paragraph rvalue="29%">{headerLeftTitle}</Paragraph>
+        <input
+          style={{
+            right: "16%",
+            position: "absolute",
+            top: "24%",
+            width: "26%",
+          }}
+          src={threeModelLogo}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            right: "18%",
+            position: "absolute",
+            top: "44%",
+            width: "24%",
+          }}
+          src={pdfLogoURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            right: "14%",
+            position: "absolute",
+            top: "65%",
+            width: "32%",
+          }}
+          src={videoURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
       </Wrapper>
     </Layout>
   );
@@ -283,6 +344,15 @@ export const pageQuery = graphql`
           url
         }
         _360_logo {
+          url
+        }
+        _3d_model_logo{
+          url
+        } 
+        pdf_logo {
+          url
+        }
+        video_logo{
           url
         }
       }
