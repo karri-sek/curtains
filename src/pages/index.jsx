@@ -12,13 +12,13 @@ import Visit from "../components/Visit";
 import Share from "../components/Share";
 import Email from "../components/Email";
 import LinkedInRight from "../components/LinkedInRight";
-import CurtainLogo from '../components/CurtainLogo';
-import LogoDescription from '../components/LogoDescription';
-import ThreeD from '../components/ThreeD';
-import PDFLogo from '../components/PDFLogo';
-import Video from '../components/Video';
-import Degree from '../components/Degree';
-import PrismicLogo from '../components/PrismicLogo';
+import CurtainLogo from "../components/CurtainLogo";
+import LogoDescription from "../components/LogoDescription";
+import ThreeD from "../components/ThreeD";
+import PDFLogo from "../components/PDFLogo";
+import Video from "../components/Video";
+import Degree from "../components/Degree";
+import PrismicLogo from "../components/PrismicLogo";
 
 const Wrapper = styled.section`
   position: relative;
@@ -116,7 +116,6 @@ const FooterLine = styled.img`
   position: absolute;
 `;
 
-
 const Paragraph = styled.p`
   top: 5.1%;
   left: ${(props) => props.lvalue};
@@ -151,42 +150,92 @@ export default (props) => {
   const linkedInLink = items.linkedinurl.url;
   const instagramLink = items.instalink.url;
   const facebookLink = items.facebookurl.url;
+  const watchVideoLink = items.watchvideolink.url;
+  const _3dmodelURL = items._3dmodellink.url;
+  const pdfDocLink = items.pdflink.url;
   const headerRightTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
 
- 
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
-        <ToplineImg src={url}/>
+        <ToplineImg src={url} />
         <TopLineR src={url} />
         <TopLineL src={url} />
-        <LinkedInInput src={linkedInURL} type="image" onClick={()=>{window.location=linkedInLink}}></LinkedInInput>
-        <LinkedInRight src={linkedInURL} type="image"  id="lr"  onClick={()=>{window.location=linkedInLink}}/>
-        <FaceBookInput type="image" value="" onclick="" src={fbIconURL} onClick={()=>{window.location=facebookLink}} />
-        <InstagramInput src={instaIconURL} type="image" value="" onClick={()=>{window.location=instagramLink}}/>
+        <LinkedInInput
+          src={linkedInURL}
+          type="image"
+          onClick={() => {
+            window.location = linkedInLink;
+          }}
+        ></LinkedInInput>
+        <LinkedInRight
+          src={linkedInURL}
+          type="image"
+          id="lr"
+          onClick={() => {
+            window.location = linkedInLink;
+          }}
+        />
+        <FaceBookInput
+          type="image"
+          value=""
+          onclick=""
+          src={fbIconURL}
+          onClick={() => {
+            window.location = facebookLink;
+          }}
+        />
+        <InstagramInput
+          src={instaIconURL}
+          type="image"
+          value=""
+          onClick={() => {
+            window.location = instagramLink;
+          }}
+        />
         <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
         <Email src={emailIconURL} type="image" value="" onclick="" />
 
         <CurtainLogo src={logo_url} type="image" value="" onclick="" />
-       
+
         <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
 
         <Visit>{headerLeftTitle}</Visit>
         <Share>{headerRightTitle}</Share>
-        <ThreeD src={threeModelLogo} type="image" value="" onclick="" />
-        <PDFLogo src={pdfLogoURL} type="image" value="" onclick="" />
-        <Video src={videoURL} type="image" value="" onclick="" />
+        <ThreeD
+          src={threeModelLogo}
+          type="image"
+          value=""
+          onClick={() => {
+            window.location = _3dmodelURL;
+          }}
+        />
+        <PDFLogo
+          src={pdfLogoURL}
+          type="image"
+          value=""
+          onClick={() => {
+            window.location = pdfDocLink;
+          }}
+        />
+        <Video
+          src={videoURL}
+          type="image"
+          value=""
+          onClick={() => {
+            window.location = watchVideoLink;
+          }}
+        />
         <Degree src={degreeIconURL} type="image" value="" onclick="" />
         <PrismicLogo src={prismicLogoURL} type="image" value="" onclick="" />
       </Wrapper>
     </Layout>
   );
 };
-
 
 export const pageQuery = graphql`
   query {
@@ -268,6 +317,15 @@ export const pageQuery = graphql`
           url
         }
         facebookurl {
+          url
+        }
+        watchvideolink {
+          url
+        }
+        _3dmodellink {
+          url
+        }
+        pdflink {
           url
         }
       }
