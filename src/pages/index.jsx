@@ -4,7 +4,20 @@ import { Parser } from "html-to-react";
 import React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import "../portret.css";
+import LinkedInInput from "../components/LinkedInInput";
+import FaceBookInput from "../components/FaceBookInput";
+import InstagramInput from "../components/InstagramInput";
+import Whatsapp from "../components/Whatsapp";
+import Visit from "../components/Visit";
+import Share from "../components/Share";
+import Email from "../components/Email";
+import LinkedInRight from "../components/LinkedInRight";
+import CurtainLogo from '../components/CurtainLogo';
+import LogoDescription from '../components/LogoDescription';
+import ThreeD from '../components/ThreeD';
+import PDFLogo from '../components/PDFLogo';
+import Video from '../components/Video';
+import Degree from '../components/Degree';
 
 const Wrapper = styled.section`
   position: relative;
@@ -50,10 +63,10 @@ const TopLineR = styled.img`
   height: 0.3%;
   position: absolute;
   @media (orientation: portrait) {
-    top: 10%;
-    left: 5%;
+    top: 6%;
+    right: 8%;
     width: 7%;
-    height: 0.3%;
+    height: 0.2%;
     position: absolute;
   }
 `;
@@ -64,6 +77,13 @@ const TopLineL = styled.img`
   width: 7%;
   height: 0.3%;
   position: absolute;
+  @media (orientation: portrait) {
+    top: 6%;
+    right: 8%;
+    width: 7%;
+    height: 0.2%;
+    position: absolute;
+  }
 `;
 
 const LogoImg = styled.div`
@@ -95,19 +115,6 @@ const FooterLine = styled.img`
   position: absolute;
 `;
 
-const LogoDescription = styled.section`
-  left: 22%;
-  top: 49%;
-  position: absolute;
-  width: 18%;
-  max-width: 34vh;
-  text-transform: uppercase;
-  color: white;
-  background: transparent;
-  fontsize: 1.3em;
-  letter-spacing: 0px;
-  line-height: 30px;
-`;
 
 const Paragraph = styled.p`
   top: 5.1%;
@@ -152,146 +159,25 @@ export default (props) => {
         <ToplineImg src={url} />
         <TopLineR src={url} />
         <TopLineL src={url} />
-        <input
-          style={{
-            left: "20%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            "font-size": "2.4vw",
-          }}
-          src={linkedInURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            left: "24%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            "font-size": "2.4vw",
-          }}
-          src={fbIconURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            left: "28%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            "font-size": "2.4vw",
-          }}
-          src={instaIconURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "24%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            "font-size": "2.4vw",
-          }}
-          src={whatsappIconURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "20%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            "font-size": "2.4vw",
-          }}
-          src={emailIconURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "16%",
-            position: "absolute",
-            top: "7%",
-            height: "6%",
-            fontSize: "2.4vw",
-          }}
-          src={linkedInURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          type="image"
-          style={{
-            left: "19%",
-            top: "30%",
-            position: "absolute",
-            width: "28%",
-          }}
-          src={logo_url}
-        />
+        <LinkedInInput src={linkedInURL} type="image" value="" onclick="" />
+
+        <FaceBookInput type="image" value="" onclick="" src={fbIconURL} />
+        <InstagramInput src={instaIconURL} type="image" value="" onclick="" />
+        <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
+        <Email src={emailIconURL} type="image" value="" onclick="" />
+        <LinkedInRight src={linkedInURL} type="image" value="" onclick="" />
+
+        <CurtainLogo src={logo_url} type="image" value="" onclick="" />
+       
         <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
-        <Paragraph lvalue="12.5%">{headerRightTitle}</Paragraph>
-        <Paragraph rvalue="29%">{headerLeftTitle}</Paragraph>
-        <input
-          style={{
-            right: "15%",
-            position: "absolute",
-            top: "80%",
-            width: "26%",
-          }}
-          src={threeModelLogo}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "18%",
-            position: "absolute",
-            top: "44%",
-            width: "24%",
-          }}
-          src={pdfLogoURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "14%",
-            position: "absolute",
-            top: "65%",
-            width: "32%",
-          }}
-          src={videoURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
-        <input
-          style={{
-            right: "16%",
-            position: "absolute",
-            top: "24%",
-            width: "26%",
-          }}
-          src={degreeIconURL}
-          type="image"
-          value=""
-          onclick=""
-        ></input>
+
+        <Visit>{headerLeftTitle}</Visit>
+        <Share>{headerRightTitle}</Share>
+        <ThreeD src={threeModelLogo} type="image" value="" onclick="" />
+        <PDFLogo src={pdfLogoURL} type="image" value="" onclick="" />
+        <Video src={videoURL} type="image" value="" onclick="" />
+        <Degree src={degreeIconURL} type="image" value="" onclick="" />
 
       </Wrapper>
     </Layout>
@@ -359,13 +245,13 @@ export const pageQuery = graphql`
         _360_logo {
           url
         }
-        _3d_model_logo{
+        _3d_model_logo {
           url
-        } 
+        }
         pdf_logo {
           url
         }
-        video_logo{
+        video_logo {
           url
         }
       }
