@@ -139,6 +139,9 @@ const globalStyle = css`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, Cantarell, Roboto, Helvetica, Arial, Noto Sans,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   },
+  .btn-twit{
+    left: 20%;
+  }
 `
 
 const Layout = ({ children }) => (
