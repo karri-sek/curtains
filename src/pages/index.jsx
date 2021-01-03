@@ -71,7 +71,7 @@ const LogoImg = styled.div`
 const LinkedInLogo = styled.input`
   left: 20%;
   font-family: Arial;
-  fontSize: 2.4vw;
+  fontsize: 2.4vw;
   color: black;
   top: 7%;
   height: 6%;
@@ -96,15 +96,26 @@ const LogoDescription = styled.section`
   text-transform: uppercase;
   color: white;
   background: transparent;
-  fontSize: 1.3em;
+  fontsize: 1.3em;
   letter-spacing: 0px;
-
   line-height: 30px;
 `;
 
+const Paragraph = styled.p`
+  top:5.1%;
+  left:${props=>props.lvalue};
+  right:${props=>props.rvalue};
+  position: absolute;
+  height:4%;
+  color: white;
+  font-size: 1.7em;
+  font-weight: bold;
+`;
 export default (props) => {
   const { data } = props;
   console.log(">>", data);
+
+  const items = data.prismicBlogpostBodyHeaderline.items[0];
   const { url } = data.prismicBlogpost.data.topline;
   const backgroundURL = data.prismicBlogpost.data.background_image.url;
   let logo_url = data.prismicBlogpost.data.logo_image.url;
@@ -113,8 +124,11 @@ export default (props) => {
   logo_url = logo_url.substring(0, logo_url.indexOf(".png") + 4);
   const footerLineURL = data.prismicBlogpost.data.footer_line.url;
   const logoDescription = data.prismicBlogpost.data.logo_description.text;
-  console.log(logoDescription);
-
+  console.log("items ", items.email.url);
+  const emailIconURL = items.email.url;
+  const whatsappIconURL = items.whatsapp.url;
+  const headerRightTitle = data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
+  const headerLeftTitle = data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
@@ -132,7 +146,46 @@ export default (props) => {
           src={linkedInURL}
           type="image"
           value=""
-          onclick="javascript:document.location.href='https://www.linkedin.com/company/the-curtain-hotel-&amp;-members-club/'"
+          onclick=""
+        ></input>
+        <input
+          style={{
+            right: "24%",
+            position: "absolute",
+            top: "7%",
+            height: "6%",
+            "font-size": "2.4vw",
+          }}
+          src={whatsappIconURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            right: "20%",
+            position: "absolute",
+            top: "7%",
+            height: "6%",
+            "font-size": "2.4vw",
+          }}
+          src={emailIconURL}
+          type="image"
+          value=""
+          onclick=""
+        ></input>
+        <input
+          style={{
+            right: "16%",
+            position: "absolute",
+            top: "7%",
+            height: "6%",
+            fontSize: "2.4vw",
+          }}
+          src={linkedInURL}
+          type="image"
+          value=""
+          onclick=""
         ></input>
         <input
           type="image"
@@ -146,6 +199,8 @@ export default (props) => {
         />
         <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
+        <Paragraph lvalue="12.5%">{headerRightTitle}</Paragraph>
+        <Paragraph rvalue="29%">{headerLeftTitle}</Paragraph>
       </Wrapper>
     </Layout>
   );
@@ -179,7 +234,7 @@ export const pageQuery = graphql`
           copyright
           url
         }
-        logo_description{
+        logo_description {
           text
         }
       }
@@ -195,6 +250,12 @@ export const pageQuery = graphql`
         social_linkedin_logo {
           alt
           copyright
+          url
+        }
+        email {
+          url
+        }
+        whatsapp {
           url
         }
       }
