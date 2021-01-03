@@ -129,7 +129,6 @@ const Paragraph = styled.p`
 `;
 export default (props) => {
   const { data } = props;
-  console.log(">>", data);
 
   const items = data.prismicBlogpostBodyHeaderline.items[0];
   const { url } = data.prismicBlogpost.data.topline;
@@ -140,7 +139,6 @@ export default (props) => {
   logo_url = logo_url.substring(0, logo_url.indexOf(".png") + 4);
   const footerLineURL = data.prismicBlogpost.data.footer_line.url;
   const logoDescription = data.prismicBlogpost.data.logo_description.text;
-  console.log("items ", items.email.url);
   const emailIconURL = items.email.url;
   const whatsappIconURL = items.whatsapp.url;
   const fbIconURL = items.facebook_logo.url;
@@ -155,12 +153,8 @@ export default (props) => {
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
-  console.log(" linkedInLink ",linkedInLink);
 
- const getURL = (value)  => {
-   console.log(" linkedInLink 2233",linkedInLink)
-   window.location=linkedInLink;
-   }
+ 
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
