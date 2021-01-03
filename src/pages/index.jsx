@@ -18,6 +18,7 @@ import ThreeD from '../components/ThreeD';
 import PDFLogo from '../components/PDFLogo';
 import Video from '../components/Video';
 import Degree from '../components/Degree';
+import PrismicLogo from '../components/PrismicLogo';
 
 const Wrapper = styled.section`
   position: relative;
@@ -148,24 +149,30 @@ export default (props) => {
   const threeModelLogo = items._3d_model_logo.url;
   const pdfLogoURL = items.pdf_logo.url;
   const videoURL = items.video_logo.url;
+  const prismicLogoURL = items.prismic_logo.url;
+  const linkedInLink = items.linkedinurl.url;
   const headerRightTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_right_title.text;
   const headerLeftTitle =
     data.prismicBlogpostBodyHeaderline.primary.header_left_title.text;
+  console.log(" linkedInLink ",linkedInLink);
 
+ const getURL = (value)  => {
+   console.log(" linkedInLink 2233",linkedInLink)
+   window.location=linkedInLink;
+   }
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
-        <ToplineImg src={url} />
+        <ToplineImg src={url}/>
         <TopLineR src={url} />
         <TopLineL src={url} />
-        <LinkedInInput src={linkedInURL} type="image" value="" onclick="" />
-
+        <LinkedInInput src={linkedInURL} type="image" onClick={()=>{window.location=linkedInLink}}></LinkedInInput>
+        <LinkedInRight src={linkedInURL} type="image"  id="lr"  onClick={()=>{window.location=linkedInLink}}/>
         <FaceBookInput type="image" value="" onclick="" src={fbIconURL} />
         <InstagramInput src={instaIconURL} type="image" value="" onclick="" />
         <Whatsapp src={whatsappIconURL} type="image" value="" onclick="" />
         <Email src={emailIconURL} type="image" value="" onclick="" />
-        <LinkedInRight src={linkedInURL} type="image" value="" onclick="" />
 
         <CurtainLogo src={logo_url} type="image" value="" onclick="" />
        
@@ -178,11 +185,12 @@ export default (props) => {
         <PDFLogo src={pdfLogoURL} type="image" value="" onclick="" />
         <Video src={videoURL} type="image" value="" onclick="" />
         <Degree src={degreeIconURL} type="image" value="" onclick="" />
-
+        <PrismicLogo src={prismicLogoURL} type="image" value="" onclick="" />
       </Wrapper>
     </Layout>
   );
 };
+
 
 export const pageQuery = graphql`
   query {
@@ -252,6 +260,12 @@ export const pageQuery = graphql`
           url
         }
         video_logo {
+          url
+        }
+        prismic_logo {
+          url
+        }
+        linkedinurl {
           url
         }
       }
