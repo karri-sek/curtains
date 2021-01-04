@@ -20,6 +20,7 @@ import Degree from "../components/Degree";
 import PrismicLogo from "../components/PrismicLogo";
 import Humburger from "../components/Humburger";
 import "../portret.css";
+import "../socialIcons.css";
 const Wrapper = styled.section`
   position: relative;
   background-size: cover;
@@ -157,7 +158,8 @@ const MenuTrigger = styled.input`
     content: "";
   }
 `;
-const Modal = ({ removeOverlay }) => {
+const Modal = ({ removeOverlay, insta, linked, fb }) => {
+  const [open, setOpen] = React.useState(false);
   return (
     <div className="overlay">
       <button
@@ -173,11 +175,24 @@ const Modal = ({ removeOverlay }) => {
             <a>Home</a>
           </li>
           <li>
-            <a>Social</a>
+            <a onClick={()=>console.log("joooo")}>Share</a>
           </li>
-          <li>
-            <a>Share</a>
+          <li className="social">
+          <a onClick={()=>setOpen(!open)}>Social</a>
+            {open &&<ul className="socialUL">
+              <li className="grid-column">
+                <img src={insta}></img>
+              </li>
+              <li className="grid-column">
+                <img src={linked}></img>
+              </li>
+              <li className="grid-column">
+                <img src={fb}></img>
+              </li>
+            </ul>
+            }
           </li>
+
           <li>
             <a>Save</a>
           </li>
@@ -319,11 +334,29 @@ export default (props) => {
         <FooterLine src={footerLineURL} />
       </Wrapper>
 
-      {open && <Modal removeOverlay={() => setOpen(!open)} />}
+      {open && (
+        <Modal
+           insta={instaIconURL} linked={linkedInURL} fb={fbIconURL}
+          removeOverlay={() => setOpen(!open)}
+        />
+      )}
     </Layout>
   );
 };
 
+const SocialIcons = ({ insta, linked, fb }) => {
+  return <div className="overlay socialIcons"></div>;
+};
+
+export const ShareIcons = ({ wp, email, linked }) => {
+  return (
+    <div className="socialIcons">
+      <img src={wp}></img>
+      <img src={email}></img>
+      <img src={linked}></img>
+    </div>
+  );
+};
 export const pageQuery = graphql`
   query {
     prismicBlogpost {
