@@ -138,20 +138,14 @@ const globalStyle = css`
     -moz-osx-font-smoothing: grayscale;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, Cantarell, Roboto, Helvetica, Arial, Noto Sans,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  },
-  .btn-twit{
-    left: 20%;
   }
 `
 
 const Layout = ({ children }) => (
-  <div>
+  <>
     <Global styles={globalStyle} />
-    <Helmet>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-    </Helmet>
     {children}
-  </div>
+  </>
 )
 
 export default Layout

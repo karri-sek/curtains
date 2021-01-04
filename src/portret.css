@@ -1,287 +1,99 @@
-.center {
-     background-position: 50% 50%;
-    background-repeat: no-repeat;
-   background-size: cover;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width:100%;
-    
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    margin: auto; 
-  } 
-   .wrap {     
-      height: 100%;
-      margin: 0 auto;
+html,body{
+  min-height: 100%;
+}
+body{
+  position: relative;
+}
+.overlay {
+  position: absolute; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color:#FFF;
+  background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
   
-  }
-  
-  .wrap-img {  
-    position: relative;
-  
-    height: 100%;  
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-     background-size: cover; 
-  
-  }
-  
-  .middle, .top-left-sur,
-  .button-sub,
-  .button-time, 
-  
-  .prevtime, .nexttime, .button-data-img,
-  .prevguest, .nextguest, .close-btn,
-  .top-right,.btn-watsap, .btn-mail,.btn-twit, .btn-face,.btn-twit, .btn-twit2, .btn-twit2-txt,.btn-inst, 
-  .top-left,  .top-left-sur,  .btn-twit-txt, .btn-face-txt,.btn-inst-txt, .btn-watsap-txt, .btn-mail-txt
-  {
-    font-family: Arial;
-      font-size: 2.4vw; 
-    color: black;
-     top:10%;
-    height: 6%;
-    position: absolute;
-  }
-  
-  .btn-watsap
-  {
-   right:30%; 
-   
-  }
-  .btn-watsap-txt
-  {
-   right:30.5%; 
-  top:17%;
-  height: 2%;
-  }
-   .btn-mail{
-  right:18%;
-  }
-   .btn-mail-txt{
-  right:18.8%;
-  top:17%;
-  height: 2%;
-  }
-   .btn-twit{
-  left:19%;
-  }
-  .btn-twit-txt{
-  left: 19.5%;
-  top:17%;
-  height: 2%;
-  }
-  
-   .btn-twit2{
-  right: 5%;
-  }
-   .btn-twit2-txt{
-  right: 5.5%;
-  top:17%;
-  height: 2%;
-  }
-   .btn-face{
-  left:31%;
-  }
-  
-  .btn-face-txt{
-  left:31.5%;
-  top:17%;
-  height: 2%;
-  }
-   .btn-inst{
-  left:7%;
-  }
-  
-   .btn-inst-txt{
-  left:7.2%;
-  top:17%;
-  height: 2%;
-  }
-  
-  .top-line-r2{
-   top:6%;
-   right:8%;
-   width:7%;
-   height:0.2%;
-    position: absolute;
-  }
-  
-  .top-line-r{
-   top:6%;
-   left:5%;
-   width:8%;
-   height:0.2%;
-    position: absolute;
-  }
-  
-  .top-line-l{
-   top:6%;
-   left:32%;
-   right:28%;
-   width:31%; 
-   height:0.2%;
-    position: absolute;
-  }
-  .top-visit{
-   top:5.5%;
-   left:14.5%;
-   height: 3%;
-    position: absolute;
-  }
-  
-  .top-share{
-   top:5.5%;
-   right:18%;
-   height: 3%;
-    position: absolute;
-  }
-  .logo{
-  right:47%;
-  bottom:6%;
-    position: absolute;
-   width:5%;
-  }
-  .visit{
-  left:29%;
-  top:67%;
-    position: absolute;
-   width:20%;
-  }
-  .enter{
-  left:23%;
-  top:60%;
-    position: absolute;
-   width:50%;
-  }
-  .visitthe{
-  left:29%;
-  top:77%;
-    position: absolute;
-   width:20%;
-  }
-  .visitthe-border{
-  left:24%;
-  top:70%;
-    position: absolute;
-   width:46%;
-  }
-  
-  .visitthe-video{
-  left:22%;
-  top:80%;
-    position: absolute;
-   width:52%;
-  }
-  
-  .visitthe-web{
-  left:56%;
-  top:78%;
-    position: absolute;
-   width:18%;
-  }
-  
-  .visitthe-m{
-  left:68%;
-  top:77%;
-    position: absolute;
-   height:3%;
-  }
-  .visitthe-model{
-  left:24%;
-  top:85%;
-    position: absolute;
-   width:55%;
-  }
-  
-  .bottom-line{
-   left:5%;
-   bottom:7%;
-   position: absolute;
-   width:40%;
-    height:0.2%;
-  }
-  .bottom-line1{
-   right:5%;
-   bottom:7%;
-   position: absolute;
-   width:40%;
-    height:0.2%;
-  }
-  
-  
-  .main-logo{
-  left:30%;
-  top:25%;
-    position: absolute;
-   width:40%;
-  }
-  .main-txt{
-  left:30%;
-  top:36%;
-    position: absolute;
-   width:40%;
-  }
-  
-  .top-left {
-    background-color: rgba(255,255,33,.0);
-    border: rgba(255,255,255,.0);     
-    top: 2%;
-    left: 30%;
-    height: 7%;
-    width: 68%;
-  }
-  .top-left-sur {
-    background-color: rgba(255,55,55,.0);
-    border: rgba(255,255,255,.0);     
-    top: 15%;
-    left: 30%;
-    height: 7%;
-    width: 68%;
-  }
-  
-  .middle {
-    background-color: rgba(255,33,255,.0);
-    border: rgba(255,255,255,.0);     
-    top: 12%;
-    margin: auto; 
-  }
-  .button-sub {
-    background-color: rgba(255,255,12, .0);
-    border: rgba(255,255,255, 0);
-    top: 87%;
-    left: 81%;
-    width: 17%;
-    height: 8.5%;
-  }
-  
-  
-  
-  .close-btn
-  {
-    top: 8.5%;
-    left: 92%; 
-    width: 2%;
-    height: 3%;
-  }
-  .msg {
-    background-color: rgba(255,255,43,.0);  
-    border: rgba(255,255,255,.0);
-    top: 48%;
-    left: 30%;
-    height: 31%;
-    width: 68%;
-   
-  }
-  .ui-datepicker-prev span, .ui-datepicker-next span {
-      background-image: none !important;
-  }
-  
-  textarea:focus, input:focus{
+}
+
+/*.controls {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  height: calc(100%/5);
+} */
+
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-transform: uppercase;
+}
+
+.overlay ul li {
+  backface-visibility: hidden;
+  min-height: 54px;
+  height: calc(100%/5);
+
+}
+
+.overlay ul li a {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 74.5px;
+  display: block;
+  color: #FFF;
+  transition: color 0.2s;
+}
+a {
+  text-decoration: none;
   outline: none;
-  }
-  input[type=button]:focus {  
-    outline: none;
-  }
-  
-  
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(./files/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.after .controls{
+  position: relative;
+  top: 50%;
+  height: 60%;
+  transform: translateY(-50%);
+}
+.controls ul li{
+  height: calc(100%/5);
+  min-height: 54px;
+}
+
+.controls ul {
+  list-style: none;
+}
+.open {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 19px;
+  top: 24px;
+  z-index: 1;
+}
