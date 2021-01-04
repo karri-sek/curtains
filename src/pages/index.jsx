@@ -158,8 +158,9 @@ const MenuTrigger = styled.input`
     content: "";
   }
 `;
-const Modal = ({ removeOverlay, insta, linked, fb }) => {
+const Modal = ({ removeOverlay, insta, linked, fb, wp, email }) => {
   const [open, setOpen] = React.useState(false);
+  const [shareopen, setShareOpen] = React.useState(false);
   return (
     <div className="overlay">
       <button
@@ -175,10 +176,22 @@ const Modal = ({ removeOverlay, insta, linked, fb }) => {
             <a>Home</a>
           </li>
           <li>
-            <a onClick={()=>console.log("joooo")}>Share</a>
+            <a onClick={()=>setShareOpen(!shareopen)}>Share</a>
+            {shareopen && <ul className="socialUL">
+              <li className="grid-column">
+                <img src={wp}></img>
+              </li>
+              <li className="grid-column">
+                <img src={email}></img>
+              </li>
+              <li className="grid-column">
+                <img src={linked}></img>
+              </li>
+            </ul>
+            }
           </li>
           <li className="social">
-          <a onClick={()=>setOpen(!open)}>Social</a>
+          <a onClick={()=>{setShareOpen(false);setOpen(!open)}}>Social</a>
             {open &&<ul className="socialUL">
               <li className="grid-column">
                 <img src={insta}></img>
@@ -337,6 +350,8 @@ export default (props) => {
       {open && (
         <Modal
            insta={instaIconURL} linked={linkedInURL} fb={fbIconURL}
+           wp={whatsappIconURL}
+           email={emailIconURL}
           removeOverlay={() => setOpen(!open)}
         />
       )}
