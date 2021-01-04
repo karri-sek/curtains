@@ -176,7 +176,7 @@ const Modal = ({ removeOverlay, insta, linked, fb, wp, email }) => {
             <a>Home</a>
           </li>
           <li>
-            <a onClick={()=>setShareOpen(!shareopen)}>Share</a>
+            <a onClick={()=>{setOpen(false); setShareOpen(!shareopen)}}>Share</a>
             {shareopen && <ul className="socialUL">
               <li className="grid-column">
                 <img src={wp}></img>
