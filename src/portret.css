@@ -1,9 +1,4 @@
-html,body{
-  min-height: 100%;
-}
-body{
-  position: relative;
-}
+
 .overlay {
   position: absolute; /* Sit on top of the page content */
   display: block; /* Hidden by default */
@@ -19,14 +14,6 @@ body{
   cursor: pointer; /* Add a pointer on hover */
   
 }
-
-/*.controls {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-  height: calc(100%/5);
-} */
 
 .overlay nav {
   text-align: center;
@@ -73,27 +60,4 @@ a {
 	outline: none;
   z-index: 100;
   cursor: pointer;
-}
-
-.after .controls{
-  position: relative;
-  top: 50%;
-  height: 60%;
-  transform: translateY(-50%);
-}
-.controls ul li{
-  height: calc(100%/5);
-  min-height: 54px;
-}
-
-.controls ul {
-  list-style: none;
-}
-.open {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 19px;
-  top: 24px;
-  z-index: 1;
 }

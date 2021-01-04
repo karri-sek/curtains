@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const LogoDescription = styled.p`
-  left: 22%;
-  top: 49%;
+  left: 18%;
+  top: 48%;
+  right: 51%;
   position: absolute;
-  width: 18%;
-  max-width: 34vh;
-  text-transform: uppercase;
+  text-align: center;
   color: white;
   background: transparent;
   font-size: 1em;
@@ -15,14 +14,24 @@ const LogoDescription = styled.p`
 
   @media (orientation: portrait) {
     top: 28%;
-    left: 30%;
-    width: 40%;
+    left: 28%;
+    width: 45%;
     position: absolute;
-    font-size: 0.6em;
-    line-height: 17px;
+    font-size: 0.7em;
     padding:0;
     margin:0;
+    text-align: center;
   }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    top: 48%;
+    left: 18%;
+    position: absolute;
+    text-align: center;
+    font-size: 0.7em;
+    padding:0;
+    margin:0;
+  } 
 `;
 
 export default LogoDescription;

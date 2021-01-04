@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const ThreeSixty = styled.input`
-  right: 15%;
+  right: 11%;
   top: 80%;
   position: absolute;
   width: 26%;
 
   @media (orientation: portrait) {
     top: 85%;
-    left: 24%;
+    left: 30%;
     position: absolute;
     width: 55%;
   }

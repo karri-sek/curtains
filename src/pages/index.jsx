@@ -18,6 +18,7 @@ import PDFLogo from "../components/PDFLogo";
 import Video from "../components/Video";
 import Degree from "../components/Degree";
 import PrismicLogo from "../components/PrismicLogo";
+import Humburger from "../components/Humburger";
 import "../portret.css";
 const Wrapper = styled.section`
   position: relative;
@@ -156,15 +157,19 @@ const MenuTrigger = styled.input`
     content: "";
   }
 `;
-const Modal = ({removeOverlay}) => {
+const Modal = ({ removeOverlay }) => {
   return (
     <div className="overlay">
-      <button type="button" className="overlay-close" onClick={e =>removeOverlay()}>
+      <button
+        type="button"
+        className="overlay-close"
+        onClick={(e) => removeOverlay()}
+      >
         Close
       </button>
       <nav>
         <ul>
-          <li class="">
+          <li>
             <a>Home</a>
           </li>
           <li>
@@ -219,6 +224,14 @@ export default (props) => {
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
+        <Humburger
+          value=""
+          type="image"
+          src={humburgerURL}
+          className="open"
+          onClick={() => setOpen(!open)}
+        ></Humburger>
+
         <ToplineImg src={url} />
         <TopLineR src={url} />
         <TopLineL src={url} />
@@ -273,7 +286,6 @@ export default (props) => {
 
         <CurtainLogo src={logo_url} type="image" />
 
-        <FooterLine src={footerLineURL} />
         <LogoDescription>{logoDescription} </LogoDescription>
 
         <Visit>{headerLeftTitle}</Visit>
@@ -304,10 +316,10 @@ export default (props) => {
         />
         <Degree src={degreeIconURL} type="image" value="" onclick="" />
         <PrismicLogo src={prismicLogoURL} type="image" value="" onclick="" />
-        <input value = "" type="image" src={humburgerURL} className="open" onClick={() => setOpen(!open)}></input>
+        <FooterLine src={footerLineURL} />
       </Wrapper>
-     
-      {open && <Modal removeOverlay={()=>setOpen(!open)}/>}
+
+      {open && <Modal removeOverlay={() => setOpen(!open)} />}
     </Layout>
   );
 };
