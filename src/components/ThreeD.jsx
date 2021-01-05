@@ -6,12 +6,14 @@ const ThreeSixty = styled.input`
   top: 80%;
   position: absolute;
   width: 26%;
+  outline: none;
 
   @media (orientation: portrait) {
     top: 85%;
     left: 30%;
     position: absolute;
     width: 55%;
+    outline: none;
   }
 `;
 

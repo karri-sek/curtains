@@ -21,6 +21,8 @@ import PrismicLogo from "../components/PrismicLogo";
 import Humburger from "../components/Humburger";
 import "../portret.css";
 import "../socialIcons.css";
+import "../hamburgers.css";
+
 const Wrapper = styled.section`
   position: relative;
   background-size: cover;
@@ -176,34 +178,50 @@ const Modal = ({ removeOverlay, insta, linked, fb, wp, email }) => {
             <a>Home</a>
           </li>
           <li>
-            <a onClick={()=>{setOpen(false); setShareOpen(!shareopen)}}>Share</a>
-            {shareopen && <ul className="socialUL">
-              <li className="grid-column">
-                <img src={wp}></img>
-              </li>
-              <li className="grid-column">
-                <img src={email}></img>
-              </li>
-              <li className="grid-column">
-                <img src={linked}></img>
-              </li>
-            </ul>
-            }
+            <a
+              onClick={() => {
+                setOpen(false);
+                setShareOpen(!shareopen);
+              }}
+            >
+              Share
+            </a>
+            {shareopen && (
+              <ul className="socialUL">
+                <li className="grid-column">
+                  <img src={wp}></img>
+                </li>
+                <li className="grid-column">
+                  <img src={email}></img>
+                </li>
+                <li className="grid-column">
+                  <img src={linked}></img>
+                </li>
+              </ul>
+            )}
           </li>
           <li className="social">
-          <a onClick={()=>{setShareOpen(false);setOpen(!open)}}>Social</a>
-            {open &&<ul className="socialUL">
-              <li className="grid-column">
-                <img src={insta}></img>
-              </li>
-              <li className="grid-column">
-                <img src={linked}></img>
-              </li>
-              <li className="grid-column">
-                <img src={fb}></img>
-              </li>
-            </ul>
-            }
+            <a
+              onClick={() => {
+                setShareOpen(false);
+                setOpen(!open);
+              }}
+            >
+              Social
+            </a>
+            {open && (
+              <ul className="socialUL">
+                <li className="grid-column">
+                  <img src={insta}></img>
+                </li>
+                <li className="grid-column">
+                  <img src={linked}></img>
+                </li>
+                <li className="grid-column">
+                  <img src={fb}></img>
+                </li>
+              </ul>
+            )}
           </li>
 
           <li>
@@ -252,13 +270,19 @@ export default (props) => {
   return (
     <Layout>
       <Wrapper url={backgroundURL}>
-        <Humburger
+     
+        {backgroundURL && <button className="hamburger hamburger--boring" type="button" onClick={() => setOpen(!open)}>
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>}
+        {/*<Humburger
           value=""
           type="image"
           src={humburgerURL}
           className="open"
           onClick={() => setOpen(!open)}
-        ></Humburger>
+        ></Humburger> */}
 
         <ToplineImg src={url} />
         <TopLineR src={url} />
@@ -349,9 +373,11 @@ export default (props) => {
 
       {open && (
         <Modal
-           insta={instaIconURL} linked={linkedInURL} fb={fbIconURL}
-           wp={whatsappIconURL}
-           email={emailIconURL}
+          insta={instaIconURL}
+          linked={linkedInURL}
+          fb={fbIconURL}
+          wp={whatsappIconURL}
+          email={emailIconURL}
           removeOverlay={() => setOpen(!open)}
         />
       )}

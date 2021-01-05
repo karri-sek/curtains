@@ -6,6 +6,7 @@ const Degree = styled.input`
   top: 24%;
   position: absolute;
   width: 26%;
+  outline: none;
 
   @media (orientation: portrait) {
     top: 60%;
