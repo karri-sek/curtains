@@ -1,19 +1,12 @@
-export const linkResolver = (doc) => {
-    // URL for a category type
-    if (doc.type === 'category') {
-      return `/category/${doc.uid}`
-    }
-  
-    // URL for a product type
-    if (doc.type === 'product') {
-      return `/product/${doc.uid}`
-    }
-  
-    // URL for a page type
-    if (doc.type === 'page') {
-      return `/${doc.uid}`
-    }
-  
-    // Backup for all other types
-    return '/'
-  }
+var PrismicDOM = require('prismic-dom');
+
+var linkResolver = function(doc) {
+    console.log(" doc  ", doc);
+  // Pretty URLs for known types
+  if (doc.type === 'blog') return "/post/" + doc.uid;
+  if (doc.type === 'page') return "/" + doc.uid;
+  // Fallback for other types, in case new custom types get created
+  return "/doc/" + doc.id;
+};
+
+var html = PrismicDOM.RichText.asHtml(document.data.body, linkResolver);

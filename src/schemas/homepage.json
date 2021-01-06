@@ -1,0 +1,325 @@
+{
+    "Main" : {
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "UID",
+          "placeholder" : "UID here"
+        }
+      },
+      "name" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "name",
+          "placeholder" : "name"
+        }
+      },
+      "topline" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 1000,
+            "height" : 1000
+          },
+          "thumbnails" : [ ],
+          "label" : "topline"
+        }
+      },
+      "logo_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 355,
+            "height" : 110
+          },
+          "thumbnails" : [ ],
+          "label" : "logo"
+        }
+      },
+      "logo_description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "paragraph",
+          "label" : "logo_description",
+          "placeholder" : "place the logo description here"
+        }
+      },
+      "background_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : null,
+            "height" : null
+          },
+          "thumbnails" : [ ],
+          "label" : "background"
+        }
+      },
+      "footer-line" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 1,
+            "height" : 1
+          },
+          "thumbnails" : [ ],
+          "label" : "footer-line"
+        }
+      },
+      "body" : {
+        "type" : "Slices",
+        "fieldset" : "Slice zone",
+        "config" : {
+          "labels" : {
+            "slice1" : [ {
+              "name" : "blogpostslice",
+              "display" : "blogpostSlice"
+            } ],
+            "rightbar" : [ ],
+            "headerline" : [ ],
+            "ehub" : [ ]
+          },
+          "choices" : {
+            "headerline" : {
+              "type" : "Slice",
+              "fieldset" : "headerLine",
+              "description" : "contains the all the items to show on header line",
+              "icon" : "headset",
+              "display" : "grid",
+              "non-repeat" : {
+                "header-left-title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "paragraph",
+                    "label" : "header-left-title",
+                    "placeholder" : "place the text for header left"
+                  }
+                },
+                "header-right-title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "paragraph",
+                    "label" : "header-right-title",
+                    "placeholder" : "place the title for header right title"
+                  }
+                }
+              },
+              "repeat" : {
+                "prismic_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "prismic_logo"
+                  }
+                },
+                "3d_model_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "3d_model_logo"
+                  }
+                },
+                "video_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "video_logo"
+                  }
+                },
+                "pdf_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "pdf_logo"
+                  }
+                },
+                "360_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "360_logo"
+                  }
+                },
+                "instagram_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "instagram_logo"
+                  }
+                },
+                "facebook_logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "facebook_logo"
+                  }
+                },
+                "email" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "email"
+                  }
+                },
+                "whatsapp" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "whatsapp"
+                  }
+                },
+                "social-linked-logo-text" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : {
+                      "width" : 500,
+                      "height" : 500
+                    },
+                    "thumbnails" : [ ],
+                    "label" : "social-linked-logo-text"
+                  }
+                },
+                "humburger" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "humburger"
+                  }
+                },
+                "social-linkedin-logo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : {
+                      "width" : 500,
+                      "height" : 500
+                    },
+                    "thumbnails" : [ ],
+                    "label" : "social-linkedin-logo"
+                  }
+                },
+                "homelink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "homelink",
+                    "placeholder" : "place the link for home button called as ehub link"
+                  }
+                },
+                "pdflink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "pdflink",
+                    "placeholder" : "enter the pdf document link here"
+                  }
+                },
+                "instalink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "instaLink"
+                  }
+                },
+                "facebookurl" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "facebookURL"
+                  }
+                },
+                "watchvideolink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "watchvideolink",
+                    "placeholder" : "Enter the url for video to watch"
+                  }
+                },
+                "3dmodellink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "3dModellink",
+                    "placeholder" : "enter the url for 3d model view"
+                  }
+                },
+                "mailtolink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "mailtolink",
+                    "placeholder" : "enter the link to send an email"
+                  }
+                },
+                "whastsappchatlink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "whastsappchatlink",
+                    "placeholder" : "enter whatsapp link to conect"
+                  }
+                },
+                "linkedinurl" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "linkedInURL"
+                  }
+                },
+                "wlink" : {
+                  "type" : "Link",
+                  "config" : {
+                    "select" : "media",
+                    "label" : "wlink",
+                    "placeholder" : "wlink"
+                  }
+                }
+              }
+            },
+            "ehub" : {
+              "type" : "Slice",
+              "fieldset" : "ehub",
+              "description" : "place for ehub assets",
+              "icon" : "account_balance",
+              "display" : "list",
+              "non-repeat" : {
+                "curtains" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "curtains"
+                  }
+                },
+                "curtains_ehub_link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "curtains ehub link",
+                    "placeholder" : "place the curtians ehub link here"
+                  }
+                },
+                "radisson" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "radisson"
+                  }
+                },
+                "radission_ehub_link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "radission ehub link",
+                    "placeholder" : "place raddision ehub link here"
+                  }
+                }
+              },
+              "repeat" : { }
+            }
+          }
+        }
+      }
+    }
+  }
