@@ -235,6 +235,7 @@ const Modal = ({ removeOverlay, insta, linked, fb, wp, email }) => {
 export default (props) => {
   const { data } = props;
   const [open, setOpen] = React.useState(false);
+  console.log(" data ", data);
   const items = data.prismicBlogpostBodyHeaderline.items[0];
   const { url } = data.prismicBlogpost.data.topline;
   const backgroundURL = data.prismicBlogpost.data.background_image.url;
