@@ -495,9 +495,6 @@ export const pageQuery = graphql`
         whastsappchatlink {
           url
         }
-        humburger {
-          url
-        }
       }
       primary {
         header_left_title {
