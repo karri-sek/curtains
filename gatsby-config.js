@@ -37,16 +37,6 @@ module.exports = {
         // resolver function.
         // See: https://prismic.io/docs/javascript/query-the-api/fetch-linked-document-fields
         fetchLinks: [],
-        pages: [
-          {
-            // (optional, builds pages dynamically)
-            type: "Page", // TypeName from prismic
-            match: "/:uid", // Pages will be generated under this pattern
-            path: "/page-preview", // Placeholder page for unpublished documents
-            component: require.resolve('./src/templates/Page.js'),
-            // component: require.resolve("./src/04.templates/brochure.js"),
-          },
-        ],
       },
     },
   ],
