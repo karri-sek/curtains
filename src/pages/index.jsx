@@ -260,7 +260,6 @@ export default (props) => {
   const watchVideoLink = items.watchvideolink.url;
   const _3dmodelURL = items._3dmodellink.url;
   const pdfDocLink = items.pdflink.url;
-  const humburgerURL = items.humburger.url;
   const whastsappchatlink = items.whastsappchatlink.url;
   const mailtolink = items.mailtolink.url;
   const headerRightTitle =
