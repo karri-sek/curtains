@@ -18,7 +18,6 @@ import PDFLogo from "../components/PDFLogo";
 import Video from "../components/Video";
 import Degree from "../components/Degree";
 import PrismicLogo from "../components/PrismicLogo";
-import Humburger from "../components/Humburger";
 import "../portret.css";
 import "../socialIcons.css";
 import "../hamburgers.css";
@@ -276,13 +275,6 @@ export default (props) => {
             <span className="hamburger-inner"></span>
           </span>
         </button>}
-        {/*<Humburger
-          value=""
-          type="image"
-          src={humburgerURL}
-          className="open"
-          onClick={() => setOpen(!open)}
-        ></Humburger> */}
 
         <ToplineImg src={url} />
         <TopLineR src={url} />
